@@ -16,9 +16,18 @@ class LocationsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingIDs()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    func settingIDs() {
         tableView.accessibilityLabel = "Locations Table"
         tableView.accessibilityIdentifier = "Locations Table"
-    
+        navigationItem.rightBarButtonItem?.accessibilityLabel = "addButton"
+        navigationItem.rightBarButtonItem?.accessibilityIdentifier = "addButton"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

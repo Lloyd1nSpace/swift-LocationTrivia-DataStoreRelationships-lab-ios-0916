@@ -51,7 +51,13 @@
                             <outlet property="delegate" destination="hiD-aI-eXj" id="rwl-91-L0m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7yy-Rx-cqx"/>
+                    <navigationItem key="navigationItem" id="7yy-Rx-cqx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LMK-Ps-8oP">
+                            <connections>
+                                <segue destination="8Nk-ad-wdV" kind="presentation" id="nEu-oU-01S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exR-jy-Vmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,6 +90,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guL-8c-VMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1726" y="164"/>
+        </scene>
+        <!--Add Location View Controller-->
+        <scene sceneID="A8l-Qf-Ucc">
+            <objects>
+                <viewController id="8Nk-ad-wdV" customClass="AddLocationViewController" customModule="swift_LocationTrivia_DataStoreRelationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jbh-u0-m0X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mn1-7h-kpZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M8x-Yk-q4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sld-ji-hS9">
+                                <rect key="frame" x="123" y="63" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-X7-9Mf">
+                                <rect key="frame" x="123" y="132" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DrS-Ow-DzB">
+                                <rect key="frame" x="123" y="206" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng1-zJ-Cgn">
+                                <rect key="frame" x="148" y="353" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="8Nk-ad-wdV" eventType="touchUpInside" id="ske-No-RmP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLa-72-vgU">
+                                <rect key="frame" x="148" y="445" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="8Nk-ad-wdV" eventType="touchUpInside" id="Kb4-bL-voE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="ZLa-72-vgU" id="O6f-h2-k3j"/>
+                        <outlet property="latitudeTextField" destination="gc7-X7-9Mf" id="emT-B1-mzW"/>
+                        <outlet property="longitudeTextField" destination="DrS-Ow-DzB" id="uGi-Ef-JPb"/>
+                        <outlet property="nameTextField" destination="Sld-ji-hS9" id="nH4-Nf-Mf0"/>
+                        <outlet property="saveButton" destination="ng1-zJ-Cgn" id="g43-FH-mad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZc-4U-x4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2481" y="164"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MSP-db-exZ">
