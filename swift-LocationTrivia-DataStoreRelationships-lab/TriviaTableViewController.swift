@@ -15,11 +15,15 @@ class TriviaTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.accessibilityLabel = "Trivia Table"
-        tableView.accessibilityIdentifier = "Trivia Table"
+        settingIDs()
     }
     
-    
+    func settingIDs() {
+        tableView.accessibilityLabel = "Trivia Table"
+        tableView.accessibilityIdentifier = "Trivia Table"
+        navigationItem.rightBarButtonItem?.accessibilityLabel = "Add Trivia Button"
+        navigationItem.rightBarButtonItem?.accessibilityIdentifier = "Add Trivia Button"
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return location!.trivia.count

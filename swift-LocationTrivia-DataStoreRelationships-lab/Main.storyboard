@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kSk-bk-Vva" kind="show" identifier="triviaSegue" trigger="accessoryAction" id="xfi-Q5-Ttr"/>
+                                    <segue destination="kSk-bk-Vva" kind="show" id="x7h-eS-aWi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1000.8" y="164.16791604197903"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Trivia Table View Controller-->
         <scene sceneID="Ucg-QJ-e4m">
             <objects>
-                <tableViewController id="kSk-bk-Vva" sceneMemberID="viewController">
+                <tableViewController id="kSk-bk-Vva" customClass="TriviaTableViewController" customModule="swift_LocationTrivia_DataStoreRelationships_lab" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0bn-wc-7K9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,10 +86,67 @@
                             <outlet property="delegate" destination="kSk-bk-Vva" id="ozN-hB-Akw"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Atm-Cx-tKz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fqy-aV-x1f">
+                            <connections>
+                                <segue destination="Iz2-dO-Dst" kind="presentation" id="aRy-l4-xLY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guL-8c-VMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="164"/>
+            <point key="canvasLocation" x="1729" y="164"/>
+        </scene>
+        <!--Add Trivia View Controller-->
+        <scene sceneID="vWo-O1-fxy">
+            <objects>
+                <viewController id="Iz2-dO-Dst" customClass="AddTriviaViewController" customModule="swift_LocationTrivia_DataStoreRelationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R8z-02-a0q"/>
+                        <viewControllerLayoutGuide type="bottom" id="HGv-j2-PKh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pQS-Cb-e4f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-S7-0ft">
+                                <rect key="frame" x="127" y="142" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-5Z-Wwt">
+                                <rect key="frame" x="158" y="226" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Iz2-dO-Dst" eventType="touchUpInside" id="ZlK-SL-ErH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXl-h9-W7l">
+                                <rect key="frame" x="151" y="318" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="Iz2-dO-Dst" eventType="touchUpInside" id="5g8-rX-1TM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="gXl-h9-W7l" id="9xb-HG-ABH"/>
+                        <outlet property="saveButton" destination="XHS-5Z-Wwt" id="aKc-xn-65j"/>
+                        <outlet property="triviumTextField" destination="ZdV-S7-0ft" id="jBQ-e4-Vdb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMJ-d4-xaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2454" y="164"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="A8l-Qf-Ucc">
@@ -125,17 +182,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng1-zJ-Cgn">
-                                <rect key="frame" x="148" y="353" width="46" height="30"/>
+                                <rect key="frame" x="154" y="353" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="8Nk-ad-wdV" eventType="touchUpInside" id="ske-No-RmP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLa-72-vgU">
-                                <rect key="frame" x="148" y="445" width="46" height="30"/>
+                                <rect key="frame" x="147" y="445" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="8Nk-ad-wdV" eventType="touchUpInside" id="Kb4-bL-voE"/>
                                 </connections>
@@ -153,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZc-4U-x4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="164"/>
+            <point key="canvasLocation" x="1730" y="-636"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MSP-db-exZ">
@@ -171,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oie-7M-VxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.600000000000001" y="164.16791604197903"/>
+            <point key="canvasLocation" x="226" y="163"/>
         </scene>
     </scenes>
 </document>

@@ -15,6 +15,9 @@ class AddLocationViewController: UIViewController {
     @IBOutlet weak var longitudeTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    let store = LocationsDataStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingIds()
@@ -34,7 +37,13 @@ class AddLocationViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-//        When the "submit" button is tapped, use the information in the text fields to create new a instance of Location and add it the the data store's locations array. Then dismiss the view controller.
+        if let name = nameTextField.text,
+            let latitude = latitudeTextField.text,
+            let longitude = longitudeTextField.text {
+            let location = Location(name: name, latitude: Float(latitude)!, longitude: Float(longitude)!)
+            store.locations.append(location)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {

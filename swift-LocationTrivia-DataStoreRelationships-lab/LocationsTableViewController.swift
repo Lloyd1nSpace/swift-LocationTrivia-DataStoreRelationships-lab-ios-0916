@@ -38,13 +38,13 @@ class LocationsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         cell.textLabel?.text = store.locations[indexPath.row].name
         cell.detailTextLabel?.text = String(describing: store.locations[indexPath.row].trivia.count)
-        
+        location = store.locations[indexPath.row]
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        location = store.locations[indexPath.row]
-    }
+//    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        location = store.locations[indexPath.row]
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "triviaSegue",
