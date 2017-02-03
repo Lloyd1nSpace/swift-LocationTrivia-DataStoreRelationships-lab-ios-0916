@@ -14,7 +14,7 @@ class AddTriviaViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    let store = LocationsDataStore.sharedInstance
+    var location: Location?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +30,11 @@ class AddTriviaViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-//        When the submit button is tapped, add use the text field to create a new Trivium object with zero likes. Add the this new trivium to the relevant Location object that was passed to the TriviaTableViewController. Then dismiss the view controller.
-        
         if let trivium = triviumTextField.text {
             let newTriv = Trivium(content: trivium, likes: 0)
-            
-            
-            
-            
-            
-            
+            location?.trivia.append(newTriv)
+            dismiss(animated: true, completion: nil)
         }
-        
-        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {

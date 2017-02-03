@@ -34,13 +34,17 @@ class TriviaTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
         cell.textLabel?.text = location?.trivia[indexPath.row].content
         cell.detailTextLabel?.text = String(describing: location?.trivia[indexPath.row].likes)
-        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addTrivia",
+            let dest = segue.destination as? AddTriviaViewController {
+            dest.location = location
+        }
     }
     
 }

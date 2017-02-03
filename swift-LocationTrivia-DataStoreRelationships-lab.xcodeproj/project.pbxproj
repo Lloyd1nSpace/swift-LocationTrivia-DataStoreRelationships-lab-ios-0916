@@ -80,19 +80,43 @@
 			isa = PBXGroup;
 			children = (
 				1B4006B91D25974A008F814D /* AppDelegate.swift */,
-				6E882BC61E43AC7A00F22138 /* Main.storyboard */,
+				6E7B0BED1E44F01800A93EC7 /* Views */,
+				6E7B0BEC1E44F01000A93EC7 /* Models */,
+				1B4006C01D25974A008F814D /* Assets.xcassets */,
+				1B4006C51D25974A008F814D /* Info.plist */,
+			);
+			path = "swift-LocationTrivia-DataStoreRelationships-lab";
+			sourceTree = "<group>";
+		};
+		6E7B0BEC1E44F01000A93EC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				1B4006D91D259895008F814D /* Location.swift */,
 				1B4006DB1D259895008F814D /* Trivium.swift */,
 				6E882BC41E43AC0200F22138 /* LocationsDataStore.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6E7B0BED1E44F01800A93EC7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				6E882BC81E43ACB000F22138 /* LocationsTableViewController.swift */,
 				6E882BCA1E43DD0900F22138 /* TriviaTableViewController.swift */,
 				6E882BCC1E43E5B400F22138 /* AddLocationViewController.swift */,
 				6E882BCE1E43FB0700F22138 /* AddTriviaViewController.swift */,
-				1B4006C01D25974A008F814D /* Assets.xcassets */,
-				1B4006C21D25974A008F814D /* LaunchScreen.storyboard */,
-				1B4006C51D25974A008F814D /* Info.plist */,
+				6E7B0BEE1E44F01C00A93EC7 /* Storyboards */,
 			);
-			path = "swift-LocationTrivia-DataStoreRelationships-lab";
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6E7B0BEE1E44F01C00A93EC7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6E882BC61E43AC7A00F22138 /* Main.storyboard */,
+				1B4006C21D25974A008F814D /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		AD21407FFBBBED557B32E60C /* Frameworks */ = {
