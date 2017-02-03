@@ -14,6 +14,8 @@ class AddTriviaViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    let store = LocationsDataStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

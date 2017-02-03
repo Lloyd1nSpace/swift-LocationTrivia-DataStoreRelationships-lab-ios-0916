@@ -18,6 +18,10 @@ class TriviaTableViewController: UITableViewController {
         settingIDs()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func settingIDs() {
         tableView.accessibilityLabel = "Trivia Table"
         tableView.accessibilityIdentifier = "Trivia Table"
